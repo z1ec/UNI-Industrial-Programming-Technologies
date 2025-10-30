@@ -1,0 +1,25 @@
+<!--Вариант 6-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>счетчик</title>
+</head>
+
+<body>
+    <p>Количество кликов: <span id="count">0</span></p>
+    <button id="clicker">Кликни меня</button>
+    <script>
+        const button = document.getElementById('clicker');
+        const countSpan = document.getElementById('count');
+
+        button.addEventListener('click', function () {
+            let currentCount = Number(countSpan.innerText);
+            currentCount++;
+            countSpan.innerText = currentCount;
+        });
+    </script>
+</body>
+
+</html>

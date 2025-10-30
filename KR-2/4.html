@@ -1,0 +1,31 @@
+<!--Вариант 1-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Проверка числа</title>
+</head>
+
+<body>
+    <input type="number" id="numberInput" placeholder="Введите число">
+    <button onclick="checkNumber()">Проверить</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            const input = document.getElementById('numberInput');
+            const result = document.getElementById('result');
+            const number = parseFloat(input.value);
+
+            if (number > 0) {
+                result.textContent = "Число положительное";
+            } else if (number < 0) {
+                result.textContent = "Число отрицательное";
+            } else {
+                result.textContent = "Число равно 0";
+            }
+        }
+    </script>
+</body>
+
+</html>

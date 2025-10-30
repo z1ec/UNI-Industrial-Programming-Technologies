@@ -1,0 +1,31 @@
+<!-- Задание 2 -->
+<!-- Напишите функцию, которая находит сумму элементов массива с нечетными индексами. -->
+<!-- Фомин Владимир Родионович -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="arrayInput" placeholder="Введите массив через запятую">
+<button onclick="calculateSum()">Найти сумму</button>
+
+<p id="result"></p>
+
+<script>
+function calculateSum() {
+    let input = document.getElementById('arrayInput').value;
+    
+    let arr = input.split(',').map(Number);
+    
+    let sum = 0;
+    for (let i = 1; i < arr.length; i += 2) {
+        sum += arr[i];
+    }
+    
+    document.getElementById('result').textContent = 
+        `Сумма элементов с нечетными индексами: ${sum}`;
+}
+</script>
+
+</body>
+</html>

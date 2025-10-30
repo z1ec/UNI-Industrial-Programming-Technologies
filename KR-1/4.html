@@ -1,0 +1,30 @@
+<!-- Задание 4 -->
+<!-- Напишите программу, которая создает массив из 5 чисел и использует функцию для вывода их, деленных на 2. -->
+<!-- Фомин Владимир Родионович -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="calculate()">Создать массив и разделить на 2</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+
+    let numbers = [10, 20, 30, 40, 50];
+    
+    let dividedNumbers = [];
+    for (let i = 0; i < numbers.length; i++) {
+        dividedNumbers.push(numbers[i] / 2);
+    }
+    
+    document.getElementById('result').innerHTML = 
+        `Исходный массив: [${numbers}]<br>
+         Результат деления на 2: [${dividedNumbers}]`;
+}
+</script>
+
+</body>
+</html>

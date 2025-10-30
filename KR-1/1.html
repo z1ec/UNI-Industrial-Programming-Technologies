@@ -1,0 +1,24 @@
+<!-- задание 1 -->
+<!-- Напишите программу, которая запрашивает строку и подсчитывает количество букв "e". -->
+<!-- Фомин Владимир Родионович -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <form onsubmit="return countE()">
+        <input type="text" id="inputString" placeholder="Введите строку">
+        <button type="submit">Подсчитать</button>
+    </form>
+    
+    <p id="result"></p>
+
+    <script>
+        function countE() {
+            let inputString = document.getElementById('inputString').value;
+            let count = inputString.toLowerCase().split('е').length - 1;
+            document.getElementById('result').textContent = `Количество букв 'e': ${count}`;
+            return false;
+        }
+    </script>
+</body>
+</html>

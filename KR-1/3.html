@@ -1,0 +1,41 @@
+<!-- Задание 3 -->
+<!-- Напишите программу, которая запрашивает у пользователя размер массива и заполняет его числами. Затем выводит все элементы в порядке их появления без повторений. -->
+<!-- Фомин Владимир Родионович -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="arraySize" placeholder="Размер массива">
+<button onclick="createArray()">Создать массив</button>
+
+<p id="result"></p>
+
+<script>
+function createArray() {
+    let size = parseInt(document.getElementById('arraySize').value);
+    
+    if (isNaN(size) || size <= 0) {
+        document.getElementById('result').textContent = 'Введите корректный размер массива';
+        return;
+    }
+    
+    let arr = [];
+    for (let i = 0; i < size; i++) {
+        arr.push(Math.floor(Math.random() * 10) + 1);
+    }
+    
+    let uniqueArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!uniqueArr.includes(arr[i])) {
+            uniqueArr.push(arr[i]);
+        }
+    }
+    
+    document.getElementById('result').textContent = 
+        `Исходный массив: [${arr}]\nБез повторений: [${uniqueArr}]`;
+}
+</script>
+
+</body>
+</html>
