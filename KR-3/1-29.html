@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RectangleScaledArea</title>
+</head>
+<body>
+    <script>
+        class RectangleScaledArea {
+            constructor(width, height) {
+                this._width = width;
+                this._height = height;
+                this._scaledWidth = width;
+                this._scaledHeight = height;
+            }
+
+            scale(k) {
+                this._scaledWidth = this._width * k;
+                this._scaledHeight = this._height * k;
+            }
+
+            get area() {
+                return this._scaledWidth * this._scaledHeight;
+            }
+        }
+
+        const rect = new RectangleScaledArea(5, 10);
+        console.log("Начальная площадь:", rect.area);
+        
+        rect.scale(2);
+        console.log("Площадь после масштабирования:", rect.area);
+    </script>
+</body>
+</html>

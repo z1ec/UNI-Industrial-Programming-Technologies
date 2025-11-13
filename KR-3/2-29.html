@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Таймер</title>
+</head>
+<body>
+    <div id="timer">00:00</div>
+
+    <script>
+        function timer(duration, tickCallback, endCallback) {
+            let timeLeft = duration;
+            
+            const interval = setInterval(() => {
+                timeLeft--;
+                tickCallback(timeLeft);
+                
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    endCallback();
+                }
+            }, 1000);
+        }
+
+        const timerElement = document.getElementById('timer');
+        
+        timer(10, 
+            (timeLeft) => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            },
+            () => {
+                timerElement.textContent = "Время вышло!";
+                timerElement.style.color = "red";
+            }
+        );
+    </script>
+</body>
+</html>

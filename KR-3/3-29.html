@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Загрузка изображений</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        function loadImage(url) {
+            return new Promise((resolve, reject) => {
+                if (url.includes("jpg")) {
+                    resolve("Изображение загружено");
+                } else {
+                    reject("Неверный формат");
+                }
+            });
+        }
+
+        const resultDiv = document.getElementById("result");
+
+        loadImage("image.jpg")
+            .then(message => {
+                resultDiv.innerHTML += `<p>${message}</p>`;
+            })
+            .catch(error => {
+                resultDiv.innerHTML += `<p>Ошибка: ${error}</p>`;
+            });
+
+        loadImage("image.png")
+            .then(message => {
+                resultDiv.innerHTML += `<p>${message}</p>`;
+            })
+            .catch(error => {
+                resultDiv.innerHTML += `<p>Ошибка: ${error}</p>`;
+            });
+    </script>
+</body>
+</html>
